@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: greenville-roleplay-bot
+    name: Greenville Roleplay Bot
     runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
