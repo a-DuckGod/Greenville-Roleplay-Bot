@@ -1,12 +1,17 @@
 services:
-  - type: worker
+  - type: web
     name: kgvrp-bot
-    env: python
+    runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: python bot.py
+    healthCheckPath: /
     envVars:
       - key: BOT_TOKEN
         sync: false
+      - key: DEFAULT_PREFIX
+        value: "-"
+      - key: DATABASE_PATH
+        value: "data/bot.db"
       - key: GUILD_ID
-        value: "0"   # or your server ID as a string
+        value: "0"
