@@ -15,7 +15,7 @@ class EarlyAccessLinkView(discord.ui.View):
     @discord.ui.button(
         label="Join Early Access",
         style=discord.ButtonStyle.primary,
-        custom_id="kgvrp:ea_link",
+        custom_id="gvrp:ea_link",
     )
     async def join_early_access(
         self, interaction: discord.Interaction, button: discord.ui.Button
@@ -63,7 +63,7 @@ class ReleaseLinkView(discord.ui.View):
     @discord.ui.button(
         label="Join Session",
         style=discord.ButtonStyle.success,
-        custom_id="kgvrp:release_link",
+        custom_id="gvrp:release_link",
     )
     async def join_session(
         self, interaction: discord.Interaction, button: discord.ui.Button

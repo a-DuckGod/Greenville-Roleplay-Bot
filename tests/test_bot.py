@@ -171,7 +171,7 @@ class TestBotAndCommands:
     @pytest.mark.asyncio
     async def test_cogs_and_prefix_per_guild(self, tmp_path):
         bot = bot_module.GreenvilleBot(db_path=str(tmp_path / "bot.db"))
-        bot._connection.user = SimpleNamespace(id=777777, name="KGVRP", mention="<@777777>")
+        bot._connection.user = SimpleNamespace(id=777777, name="Greenville Roleplay Bot", mention="<@777777>")
 
         await bot.load_extension("cogs.session")
         await bot.load_extension("cogs.moderation")
@@ -326,7 +326,7 @@ class TestBotAndCommands:
     @pytest.mark.asyncio
     async def test_purge_and_release_button_and_general(self, tmp_path):
         bot = bot_module.GreenvilleBot(db_path=str(tmp_path / "extra.db"))
-        bot._connection.user = SimpleNamespace(id=777777, name="KGVRP", mention="<@777777>")
+        bot._connection.user = SimpleNamespace(id=777777, name="Greenville Roleplay Bot", mention="<@777777>")
         mod_cog = ModerationCog(bot)
         sess_cog = SessionCog(bot)
         cfg_cog = ConfigCog(bot)
