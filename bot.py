@@ -133,7 +133,7 @@ class GreenvilleBot(commands.Bot):
             except discord.HTTPException:
                 pass
 
-    async def on_guild_remove(self, guild: discord. Guild) -> None:
+    async def on_guild_remove(self, guild: discord.Guild) -> None:
         logger.info("Removed from guild: %s (%s). Deleting stored data.", guild.name, guild.id)
         self.db.delete_guild_data(guild.id)
 
