@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Privacy Policy - Greenville Roleplay Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            max-height: 85vh;
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        p {
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .contact-info {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .section-header {
+            margin-top: 40px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        .content-container {
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Privacy Policy</h1>
+        <p>Last updated: November 16, 2026</p>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <h2 class="section-header">1. Introduction</h2>
+            <p>This Privacy Policy explains what information the Greenville Roleplay Bot ("the bot") collects, how it is used, and how you can have it removed. It applies to every Discord server that invites the bot and to every member who interacts with it. This policy should be read together with our Terms of Service.</p>
+
+            <h2 class="section-header">2. Information We Store</h2>
+            <p>The bot stores only what it needs to work. All stored data is kept in a SQLite database on the bot's host.</p>
+            <p><strong>Server configuration</strong> (saved when a server admin uses <code>/config</code>):</p>
+            <ul>
+                <li>Server (guild) ID</li>
+                <li>Command prefix</li>
+                <li>Rules channel ID and session announcement channel ID</li>
+                <li>Staff/Host role IDs, Early Access role IDs, and Booster role ID</li>
+                <li>Startup and release ping settings (<code>@everyone</code>, <code>@here</code>, a role ID, or none)</li>
+                <li>Default reaction goal and startup reaction emojis</li>
+            </ul>
+            <p><strong>Session links</strong> (saved when a host uses <code>/ea</code> or <code>/release</code>), so that join buttons keep working after a restart:</p>
+            <ul>
+                <li>The ID of the announcement message and the server it was posted in</li>
+                <li>The session link the host provided (for example, a Roblox private server URL)</li>
+                <li>The Discord user ID of the host who posted it</li>
+                <li>The type of link (Early Access or Release) and the time it was posted</li>
+            </ul>
+            <p>The bot does <strong>not</strong> store message content, usernames, nicknames, avatars, member lists, or any information about members who simply press a button or react to a post.</p>
+
+            <h2 class="section-header">3. Discord Permissions and Intents</h2>
+            <p>The bot uses two privileged Discord gateway intents. Neither is used to store data.</p>
+            <ul>
+                <li><strong>Message Content Intent:</strong> used only to recognize prefix commands (for example, <code>-startup</code>). Messages are read in the moment to check for a command and are not saved. When a prefix command is used, the bot may delete the triggering message to keep channels clean.</li>
+                <li><strong>Server Members Intent:</strong> used only to check a member's roles at the time they run a command or press a button, so that staff commands and Early Access links are limited to the right people.</li>
+            </ul>
+            <p>The <code>/purge</code> command deletes messages through Discord but does not copy or keep them.</p>
+
+            <h2 class="section-header">4. How Information Is Used</h2>
+            <p>Stored information is used only to:</p>
+            <ul>
+                <li>Apply each server's own channels, roles, prefix, pings, and reaction goals</li>
+                <li>Decide who is allowed to use staff commands and Early Access buttons</li>
+                <li>Show the correct session link when a member presses a join button</li>
+            </ul>
+            <p>We do not sell, rent, or share this information with third parties, and we do not use it for advertising, analytics, or profiling.</p>
+
+            <h2 class="section-header">5. Hosting and Logs</h2>
+            <p>The bot is hosted on <a href="https://render.com" class="contact-info">Render</a>, which stores the database and processes the bot's traffic on our behalf. The bot also writes basic operational logs on Render, which may include a server's name and ID when the bot joins and technical details when a command fails. These logs are used only for troubleshooting.</p>
+            <p>All information also passes through Discord, which handles it under the <a href="https://discord.com/privacy" class="contact-info">Discord Privacy Policy</a>.</p>
+
+            <h2 class="section-header">6. Data Retention and Deletion</h2>
+                        <ul>
+                <li><strong>Server configuration</strong> is kept until a server admin runs <code>/config reset</code>, which deletes it immediately, or until you ask us to delete it.</li>
+                <li><strong>Session link records</strong> are kept so that join buttons on older announcements continue to work. They are not removed by <code>/config reset</code>.</li>
+                <li>When the bot is <strong>removed from a server</strong>, all of that server's configuration and session link records are deleted automatically.</li>
+                <li>Stored data may also be cleared when the bot is redeployed or moved to a new host.</li>
+            </ul>
+
+            <h2 class="section-header">7. Security</h2>
+            <p>We take reasonable steps to protect stored data, including keeping the bot token and database out of public view. No online service is completely secure, so we cannot guarantee absolute security. Security issues can be reported as described in this repository's <code>SECURITY.md</code>.</p>
+
+            <h2 class="section-header">8. Children's Privacy</h2>
+            <p>The bot is intended for use on Discord, which requires users to meet its minimum age requirement. We do not knowingly collect information from anyone below Discord's minimum age.</p>
+
+            <h2 class="section-header">9. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time, for example when new features change what the bot stores. The "Last updated" date at the top of this page will change, and significant updates will be communicated through the bot or official channels.</p>
+
+            <h2 class="section-header">10. Contact</h2>
+            <p>If you have any questions about this Privacy Policy or want your data deleted, please contact us at: <a href="mailto:arealduckgod@gmail.com" class="contact-info">arealduckgod@gmail.com</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Greenville Roleplay Bot. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+<!-- End of Privacy Policy HTML Document -->
+<!-- This document describes what data the Greenville Roleplay Bot stores, why, how long it is kept, and how to request deletion. It matches the layout and styling of Terms of Services.html. -->
