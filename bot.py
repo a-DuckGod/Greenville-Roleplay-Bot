@@ -102,7 +102,7 @@ class GreenvilleBot(commands.Bot):
             )
         )
 
-    async def on_guild_join(self, guild: discord.Guild) -> None:
+        async def on_guild_join(self, guild: discord.Guild) -> None:
         logger.info("Joined guild: %s (%s)", guild.name, guild.id)
         cfg = self.db.get_guild_config(guild.id)
 
@@ -116,10 +116,6 @@ class GreenvilleBot(commands.Bot):
                 ),
                 None,
             )
-
-    async def on_guild_remove(self, guild: discord.Guild) -> None:
-        logger.info("Removed from guild: %s (%s). Deleting stored data.", guild.name, guild.id)
-        self.db.delete_guild_data(guild.id)
 
         if target is not None:
             embed = discord.Embed(
@@ -136,6 +132,10 @@ class GreenvilleBot(commands.Bot):
                 await target.send(embed=embed)
             except discord.HTTPException:
                 pass
+
+    async def on_guild_remove(self, guild: discord. Guild) -> None:
+        logger.info("Removed from guild: %s (%s). Deleting stored data.", guild.name, guild.id)
+        self.db.delete_guild_data(guild.id)
 
 
 def register_error_handlers(bot: GreenvilleBot) -> None:
