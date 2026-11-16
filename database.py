@@ -197,6 +197,14 @@ class Database:
         self._guild_cache.pop(guild_id, None)
         return self.get_guild_config(guild_id)
 
+    def delete_guild_data(self, guild_id: int) -> None:
+        with self._lock:
+            cur = self._conn.cursor()
+            cur.execute("DELETE FROM guild_configs WHERE guild_id = ?", (guild_id,))
+            cur.execute("DELETE FROM session_links WHERE guild_id = ?", (guild_id,))
+            self._conn.commit()
+        self._guild_cache.pop(guild_id, None)
+
     def save_session_link(
         self,
         message_id: int,
