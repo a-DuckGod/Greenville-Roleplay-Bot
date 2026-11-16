@@ -102,7 +102,7 @@ class GreenvilleBot(commands.Bot):
             )
         )
 
-        async def on_guild_join(self, guild: discord.Guild) -> None:
+    async def on_guild_join(self, guild: discord.Guild) -> None:
         logger.info("Joined guild: %s (%s)", guild.name, guild.id)
         cfg = self.db.get_guild_config(guild.id)
 
