@@ -117,6 +117,10 @@ class GreenvilleBot(commands.Bot):
                 None,
             )
 
+    async def on_guild_remove(self, guild: discord.Guild) -> None:
+        logger.info("Removed from guild: %s (%s). Deleting stored data.", guild.name, guild.id)
+        self.db.delete_guild_data(guild.id)
+
         if target is not None:
             embed = discord.Embed(
                 title="👋 Thanks for adding Greenville Roleplay Bot!",
